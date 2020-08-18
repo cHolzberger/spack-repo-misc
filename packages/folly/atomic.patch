@@ -1,0 +1,12 @@
+*** spack-src/CMake/folly-deps.cmake	2020-06-27 03:00:36.000000000 +0200
+--- fix/CMake/folly-deps.cmake	2020-07-07 02:12:14.708481580 +0200
+*************** check_cxx_source_compiles("
+*** 172,177 ****
+--- 172,178 ----
+  if(NOT FOLLY_CPP_ATOMIC_BUILTIN)
+    list(APPEND CMAKE_REQUIRED_LIBRARIES atomic)
+    list(APPEND FOLLY_LINK_LIBRARIES atomic)
++   set(ATOMIC_LIBRARY "atomic")
+    check_cxx_source_compiles("
+      #include <atomic>
+      int main(int argc, char** argv) {
