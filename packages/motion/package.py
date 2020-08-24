@@ -48,10 +48,12 @@ class Motion(AutotoolsPackage):
     depends_on('automake', type='build')
     depends_on('libtool',  type='build')
     depends_on('m4',       type='build')
+    depends_on('libjpeg-turbo' )
 
     # FIXME: Add additional dependencies if required.
     # depends_on('foo')
     depends_on('ffmpeg')
+    #depends_on("libmicrohttpd")
 
     def autoreconf(self, spec, prefix):
         # FIXME: Modify the autoreconf method as necessary
